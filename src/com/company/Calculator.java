@@ -24,6 +24,8 @@ public class Calculator {
                 return log(opperands[0], opperands[1]);
             case ("div"):
                 return div(a,b);
+            case ("mod"):
+                return mod(a,b);
             default:
                 throw new Exception("Unknown arithmetics sign");
         }
@@ -53,5 +55,10 @@ public class Calculator {
         }
 
         return lessThenZero ? -1*div : div;
+    }
+
+    private static double mod(BigDecimal first, BigDecimal second){
+        double div = div(first, second);
+        return first.subtract(BigDecimal.valueOf(div).multiply(second)).doubleValue();
     }
 }
