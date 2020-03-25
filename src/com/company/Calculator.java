@@ -26,6 +26,8 @@ public class Calculator {
                 return div(a,b);
             case ("mod"):
                 return mod(a,b);
+            case ("sqrt"):
+                return sqrt(opperands[0], opperands[1]);
             default:
                 throw new Exception("Unknown arithmetics sign");
         }
@@ -60,5 +62,9 @@ public class Calculator {
     private static double mod(BigDecimal first, BigDecimal second){
         double div = div(first, second);
         return first.subtract(BigDecimal.valueOf(div).multiply(second)).doubleValue();
+    }
+
+    private static double sqrt(double first, double second){
+        return degree(first, 2/second);
     }
 }
