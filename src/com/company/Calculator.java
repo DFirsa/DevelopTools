@@ -18,8 +18,14 @@ public class Calculator {
                 return a.multiply(b).doubleValue();
             case("/"):
                 return a.divide(b).doubleValue();
+            case ("^"):
+                return degree(opperands[0], opperands[1]);
             default:
                 throw new Exception("Unknown arithmetics sign");
         }
+    }
+
+    private static double degree(double first, double second){
+        return Math.pow(first, second);
     }
 }
