@@ -65,6 +65,6 @@ public class Calculator {
     }
 
     private static double sqrt(double first, double second){
-        return degree(first, 2/second);
+        return degree(first, 1/second);
     }
 }
