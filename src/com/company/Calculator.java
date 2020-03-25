@@ -18,8 +18,24 @@ public class Calculator {
                 return a.multiply(b).doubleValue();
             case("/"):
                 return a.divide(b).doubleValue();
+            case ("^"):
+                return degree(opperands[0], opperands[1]);
+            case("log"):
+                return log(opperands[0], opperands[1]);
             default:
                 throw new Exception("Unknown arithmetics sign");
         }
+    }
+
+    private static double degree(double first, double second){
+        return Math.pow(first, second);
+    }
+
+    private static double log(double first, double second){
+
+        BigDecimal a = BigDecimal.valueOf(Math.log(first));
+        BigDecimal b = BigDecimal.valueOf(Math.log(second));
+
+        return a.divide(b).doubleValue();
     }
 }
